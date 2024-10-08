@@ -6,7 +6,20 @@ typedef struct node {
 } node;
 
 int has_cycle(node *head) {
-	// Your code goes here:
+  //Both pointers start at the head of the list
+  node* n1 = head;  // slow pointer
+  node* n2 = head;  // fast pointer
+ 
+  while (n2 != NULL && n2->next != NULL) {
+    n1 = n1->next;              // n1 moves one step
+    n2 = n2->next->next;        // n2 moves two steps
+
+    if (n1 == n2) {             // if the the two meet then there is a cycle because it means the n2 pointer has passed
+      return 1;                 // the n1
+    }
+  }
+
+  return 0;  // If no cycle has been found
 }
 
 void test_has_cycle(void) {

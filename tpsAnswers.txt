@@ -1,0 +1,57 @@
+TPS 1:
+    Angel Vargas
+    Jordan Huynh
+    Gurkarn Singh
+    Roshan Kattil
+
+
+Individual assignment 1: Arrays and Pointers
+
+    1.This program will store integers entered by a user into an array. It then calls bubbleSort to sort the
+    array. Study the code in bubbleSort to refresh your memory on Bubble Sort algorithm and answer
+    the following questions:
+    
+    a. Why do we need to pass the size of array to the function?
+         _________________________________________________________________________________________________________
+        |In C, arrays do not store their length or check bounds atuomatically. So we must pass its array and size |
+        |so we can prevent accidental access beyond the arrays limit.                                             |
+        |_________________________________________________________________________________________________________|
+
+    b. Is the original array (the one being passed into the function) changed at the end of this function?
+         _________________________________________________________________________________________________________
+        |No the orginal array is not changed at the end of the function because we use a copy of the original     |
+        |called s_arr to store the sorted values, leaving our original array to stay the same.                    |
+        |_________________________________________________________________________________________________________|
+    
+    c. Why do you think a new array (s_array) is needed to store the result of the sorted values (why not
+    update the array as we sort)? Hint: look at what the main function does.
+         ______________________________________________________________________________________________________________
+        |The reason a new array is created is because we need to store the sorted versoin of the array while leaving   |
+        |the original array unchanged, so we can print bith the unsoted version and sorted. But why cant we just update|
+        |the orginal array, well if we did the original arrray would be lost and we wouldn't be able to print it.      |
+        |______________________________________________________________________________________________________________|
+         
+Individual assignment 2: Cyclic Linked List
+    ------------------------------------------------------------------------------------------------------
+    Recall that if p is a pointer to a struct, p->member refers to a member variable in the struct, and is
+    equivalent to (*p).member.
+    ------------------------------------------------------------------------------------------------------
+    1. Start with two pointers at the head of the list
+
+    2. On each iteration, increment the first pointer by one node and the second pointer by two nodes. If it is
+    not possible to do one or both because of a null pointer, then we know there is an end to the list and
+    there is therefore no cycle.
+
+    3. We know there is a cycle if
+
+        a. The second pointer is the same as the first pointer
+
+        b. The next node of the second pointer is pointed to by the first pointer
+
+    ----------------------------------------------------------------------------------------------------
+    The reason we know there is a cycle with the two conditions in 3) is that second pointer has wrapped
+    around to the first one in the circle and we have detected it. After you have correctly implemented
+    has_cycle, the program you get when you compile cyclic_ll.c will tell you that has_cycle agrees
+    with what the program expected it to output
+    ----------------------------------------------------------------------------------------------------
+

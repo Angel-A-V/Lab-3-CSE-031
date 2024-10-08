@@ -32,6 +32,31 @@ int* bubbleSort(int arr[], int n) {
 
 }
 
+//New code:
+
+// int* bubbleSort(int arr[], int n) {
+//     int temp, i = 0, j = 0;
+//     int *s_arr = (int *) malloc(n * sizeof(int));
+
+//     // Copy arr to s_arr
+//     for(i = 0; i < n; i++)
+//         *(s_arr + i) = *(arr + i);
+
+//     // Sorting using array notations
+// 	// Comment this when implementing pointer version.
+//     for (i = 0; i < n - 1; i++) {
+//         for(j = 0; j < n - 1; j++) {
+//             if(s_arr[j] > s_arr[j + 1]){ 
+//                 temp = *(s_arr + j + 1);            // old  s_arr[j + 1] code for the for loop
+//                 *(s_arr + j + 1) = *(s_arr + j);    // old  s_arr[j + 1] = s_arr[j] code for the for loop
+//                 *(s_arr + j) = temp; //  s_arr[j]
+//             }
+//         }
+//     }
+//     // Sorting using pointer notations. i.e. you cannot use "[]"!
+//     return s_arr;
+// }
+
 void printArray(int arr[], int n) {
     int i = 0;
     printf("[");
@@ -44,9 +69,24 @@ int bSearch(int *arr, int a, int b, int key) {
     // Binary search function. arr is the array, key is the value to search for, a and b are the boundaries of arr to be searched within.
     // You must use pointer notations. i.e. no "[]"
     // Your code goes here:
-
-
-	return 0; // Modify this to return an appropriate value!
+    // int  mid = 0;
+    if(b >= a){      // ask to go throght this one more time 
+        int mid = (b-a)/2+a;
+    
+    if(key == *(arr + mid)){
+        return mid;
+    }
+    
+    if(key < *(arr+mid)){
+        b = mid-1;
+        return bSearch(arr,a,b,key);
+    }     
+    
+        a = mid+1;
+        return bSearch(arr,a,b,key);
+    }
+    
+    return -1; // Modify this to return an appropriate value!
 }
 
 int main() {
