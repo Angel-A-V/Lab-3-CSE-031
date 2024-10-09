@@ -14,6 +14,18 @@
 	*handle = ptr;
 
 	// Insert code here
+    printf("num is at: %p\n", (void*)&num);
+    printf("num value: %d\n\n", num);
+
+    printf("ptr is at: %p\n", (void*)&ptr);
+    printf("ptr points to: %p\n", (void*)ptr);
+    printf("value at ptr: %d\n\n", *ptr);
+
+    printf("handle is at: %p\n", (void*)&handle);
+    printf("handle points to: %p\n", (void*)handle);
+    printf("handle points to ptr, which is at: %p\n", (void*)*handle);
+    printf("value at *handle: %d\n\n", **handle);
+
 
 	return 0;
 } 

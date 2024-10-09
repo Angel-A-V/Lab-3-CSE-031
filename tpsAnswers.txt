@@ -4,6 +4,32 @@ TPS 1:
     Gurkarn Singh
     Roshan Kattil
 
+    1. The three pools for memory are static / global, stack, and heap. And the variables stored in the heap are dynamically allocated, the stack stores local variables
+       and global stores global and static variables.
+    
+    2.(a). There are three variables that are declared, which are:
+        "
+        int num;
+	    int *ptr;
+	    int **handle;
+        "
+        (b) There are two pointers and one of the pointers is pointing at an integer and the other is pointing to       
+            another pointer
+
+        (c). The pools of memory these variables are stored in is stack, but for ptr and handle pointers themselves memory is not on the stack
+
+        (d). In line 12 ptr is dynamicallly allocated memory using malloc(), so it in the heap.
+
+    3. 
+
+    
+TPS 2:
+    1. The programs dynamicallly allocates memory for a struct node.
+
+    2. In NodeStruct.C
+
+    3. The structure’s fields are stored next to each other in memory, with iValue first, followed by fValue and next. 
+       The pointer head points to the starting address of the structure, and you can use it to access each field.
 
 Individual assignment 1: Arrays and Pointers
 
